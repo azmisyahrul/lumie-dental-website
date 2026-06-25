@@ -25,6 +25,83 @@
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Lumie Dental",
+      "alternateName": "Lumie Dental Kota Wisata",
+      "description": "Klinik gigi keluarga terpercaya di Kota Wisata, Cileungsi. Melayani pemeriksaan umum, scaling, tambal gigi, behel, cabut gigi, bleaching, crown, dan gigi palsu. Dokter ramah untuk anak-anak.",
+      "image": "https://lumiedental.id/images/logo.png",
+      "url": "https://lumiedental.id",
+      "telephone": "+6285121370882",
+      "email": "info@lumiedental.id",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kota Wisata, Cileungsi",
+        "addressLocality": "Cileungsi",
+        "addressRegion": "Jawa Barat",
+        "postalCode": "16820",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -6.4611,
+        "longitude": 106.9544
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "09:00",
+          "closes": "21:00"
+        }
+      ],
+      "priceRange": "$$",
+      "currenciesAccepted": "IDR",
+      "paymentAccepted": "Cash, Debit Card, Credit Card, QRIS",
+      "areaServed": [
+        {"@type": "City", "name": "Cileungsi"},
+        {"@type": "City", "name": "Ciangsana"},
+        {"@type": "City", "name": "Cikeas"},
+        {"@type": "City", "name": "Cibubur"}
+      ],
+      "medicalSpecialty": "Dentistry",
+      "availableService": [
+        {"@type": "MedicalProcedure", "name": "Pemeriksaan Gigi Umum"},
+        {"@type": "MedicalProcedure", "name": "Scaling / Pembersihan Karang Gigi"},
+        {"@type": "MedicalProcedure", "name": "Tambal Gigi"},
+        {"@type": "MedicalProcedure", "name": "Cabut Gigi"},
+        {"@type": "MedicalProcedure", "name": "Behel / Ortodonti"},
+        {"@type": "MedicalProcedure", "name": "Bleaching / Pemutihan Gigi"},
+        {"@type": "MedicalProcedure", "name": "Crown & Bridge"},
+        {"@type": "MedicalProcedure", "name": "Gigi Palsu / Denture"},
+        {"@type": "MedicalProcedure", "name": "Perawatan Gigi Anak"}
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "ratingCount": "10",
+        "reviewCount": "10"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "author": {"@type": "Person", "name": "Pasien Lumie Dental"},
+          "reviewBody": "Dokternya ramah, anak saya gak takut lagi ke dokter gigi!"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/lumiedental",
+        "https://www.tiktok.com/@lumiedental",
+        "https://www.facebook.com/lumiedental"
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- ========== NAVBAR ========== -->
@@ -413,6 +490,7 @@
                         <li><a href="#tentang">Tentang</a></li>
                         <li><a href="#testimoni">Testimoni</a></li>
                         <li><a href="#lokasi">Lokasi</a></li>
+                        <li><a href="blog/">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">

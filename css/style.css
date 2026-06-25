@@ -928,14 +928,14 @@ ul {
 .promo-circle {
     width: 200px;
     height: 200px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.95);
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 3px dashed rgba(255,255,255,0.4);
-    animation: spin 20s linear infinite;
+    border: 4px solid var(--white);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
 }
 
 @keyframes spin {
@@ -944,19 +944,19 @@ ul {
 }
 
 .promo-circle * {
-    animation: spin 20s linear infinite reverse;
+    /* No animation needed */
 }
 
 .promo-free {
     font-family: var(--font-heading);
     font-size: 36px;
     font-weight: 800;
-    color: var(--white);
+    color: var(--primary);
 }
 
 .promo-detail {
     font-size: 14px;
-    color: rgba(255,255,255,0.9);
+    color: var(--gray-1);
     text-align: center;
     font-weight: 600;
 }

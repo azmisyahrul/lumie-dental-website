@@ -10,7 +10,7 @@
     
     <!-- Blog Index -->
     <url>
-        <loc>https://lumiedental.id/blog</loc>
+        <loc>https://lumiedental.id/blog/</loc>
         <lastmod>2026-06-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>

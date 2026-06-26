@@ -3,73 +3,72 @@
     <!-- Homepage -->
     <url>
         <loc>https://lumiedental.id/</loc>
-        <lastmod>2026-06-27</lastmod>
+        <lastmod>2026-06-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     
     <!-- Blog Index -->
     <url>
-        <loc>https://lumiedental.id/blog/</loc>
-        <lastmod>2026-06-27</lastmod>
+        <loc>https://lumiedental.id/blog</loc>
+        <lastmod>2026-06-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
-    <!-- Blog Posts -->
+    <!-- Blog Posts (tanpa .html - sesuai Cloudflare Pages URL) -->
     <url>
-        <loc>https://lumiedental.id/blog/harga-scaling-gigi-cileungsi.html</loc>
-        <lastmod>2026-06-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://lumiedental.id/blog/klinik-gigi-terbaik-kota-wisata.html</loc>
-        <lastmod>2026-06-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://lumiedental.id/blog/biaya-behel-gigi-cileungsi.html</loc>
-        <lastmod>2026-06-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://lumiedental.id/blog/tips-memilih-klinik-gigi-anak.html</loc>
-        <lastmod>2026-06-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://lumiedental.id/blog/harga-bleaching-gigi-cileungsi.html</loc>
-        <lastmod>2026-06-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://lumiedental.id/blog/tips-merawat-gigi-sehat.html</loc>
-        <lastmod>2026-06-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- New Blog Posts -->
-    <url>
-        <loc>https://lumiedental.id/blog/harga-cabut-gigi-cileungsi.html</loc>
+        <loc>https://lumiedental.id/blog/harga-scaling-gigi-cileungsi</loc>
         <lastmod>2026-06-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://lumiedental.id/blog/harga-veneer-gigi-cileungsi.html</loc>
+        <loc>https://lumiedental.id/blog/klinik-gigi-terbaik-kota-wisata</loc>
         <lastmod>2026-06-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://lumiedental.id/blog/biaya-behel-gigi-cileungsi</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://lumiedental.id/blog/tips-memilih-klinik-gigi-anak</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://lumiedental.id/blog/harga-bleaching-gigi-cileungsi</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://lumiedental.id/blog/tips-merawat-gigi-sehat</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://lumiedental.id/blog/harga-cabut-gigi-cileungsi</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://lumiedental.id/blog/harga-veneer-gigi-cileungsi</loc>
+        <lastmod>2026-06-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

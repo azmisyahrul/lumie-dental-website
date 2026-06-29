@@ -154,7 +154,7 @@ ul {
 /* ---------- SECTION HEADER ---------- */
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -544,7 +544,7 @@ ul {
    SERVICES
    ======================================== */
 .services {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--white);
 }
 
@@ -648,7 +648,7 @@ ul {
    WHY US
    ======================================== */
 .why-us {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--gray-7);
 }
 
@@ -699,7 +699,7 @@ ul {
    DOCTORS
    ======================================== */
 .doctors {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--gray-7);
     position: relative;
     overflow: hidden;
@@ -892,7 +892,7 @@ ul {
    TESTIMONIALS
    ======================================== */
 .testimonials {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--white);
     overflow: hidden;
 }
@@ -1029,7 +1029,7 @@ ul {
    PROMO
    ======================================== */
 .promo {
-    padding: 80px 0;
+    padding: 50px 0;
     background: var(--gray-7);
 }
 
@@ -1165,7 +1165,7 @@ ul {
    LOCATION
    ======================================== */
 .location {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--white);
 }
 
@@ -1293,7 +1293,7 @@ ul {
    CTA FINAL
    ======================================== */
 .cta-final {
-    padding: 80px 0;
+    padding: 50px 0;
     background: var(--gray-7);
     text-align: center;
 }

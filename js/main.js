@@ -45,66 +45,110 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ========== COUNTER ANIMATION ==========
+    const counters = document.querySelectorAll('.stat-number');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-target'));
+                animateCounter(counter, target);
+                counterObserver.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    function animateCounter(element, target) {
+        const duration = 2000;
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target.toLocaleString('id-ID');
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current).toLocaleString('id-ID');
+            }
+        }, 16);
+    }
+
     // ========== FADE IN ON SCROLL ==========
-    const fadeElements = document.querySelectorAll('.service-card, .why-card, .doctor-card, .location-card, .section-header');
+    const fadeElements = document.querySelectorAll('.service-card, .why-card, .location-card, .section-header');
     
-    fadeElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    });
+    fadeElements.forEach(el => el.classList.add('fade-in'));
 
     const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
                 setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, 80);
+                    entry.target.classList.add('visible');
+                }, index * 80);
                 fadeObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     fadeElements.forEach(el => fadeObserver.observe(el));
 
     // ========== TESTIMONIAL SLIDER ==========
     const track = document.getElementById('testimonialTrack');
-    let currentSlide = 0;
+    const prevBtn = document.getElementById('prevTest');
+    const nextBtn = document.getElementById('nextTest');
+    const dotsContainer = document.getElementById('testimonialDots');
+    const cards = track.querySelectorAll('.testimonial-card');
+    let currentIndex = 0;
     let autoSlide;
 
-    function getTotalSlides() {
-        return track.querySelectorAll('.testimonial-card').length;
+    // Create dots
+    cards.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    function getCardWidth() {
+        const card = cards[0];
+        const style = getComputedStyle(track);
+        const gap = parseInt(style.gap) || 24;
+        return card.offsetWidth + gap;
     }
 
-    function slideTestimonial(direction) {
-        const total = getTotalSlides();
-        currentSlide += direction;
-        if (currentSlide < 0) currentSlide = total - 1;
-        if (currentSlide >= total) currentSlide = 0;
-        
-        const card = track.querySelector('.testimonial-card');
-        const cardWidth = card.offsetWidth;
-        track.scrollTo({ left: cardWidth * currentSlide, behavior: 'smooth' });
-        
-        resetAutoSlide();
+    function updateDots() {
+        dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
     }
 
-    // Make slideTestimonial globally available
-    window.slideTestimonial = slideTestimonial;
+    function goToSlide(index) {
+        if (index < 0) index = cards.length - 1;
+        if (index >= cards.length) index = 0;
+        currentIndex = index;
+        track.scrollTo({ left: getCardWidth() * currentIndex, behavior: 'smooth' });
+        updateDots();
+    }
 
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    // Auto slide
     function startAutoSlide() {
-        autoSlide = setInterval(() => slideTestimonial(1), 5000);
+        autoSlide = setInterval(() => goToSlide(currentIndex + 1), 5000);
     }
 
-    function resetAutoSlide() {
+    function stopAutoSlide() {
         clearInterval(autoSlide);
-        startAutoSlide();
     }
 
     startAutoSlide();
 
-    track.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    track.addEventListener('mouseenter', stopAutoSlide);
     track.addEventListener('mouseleave', startAutoSlide);
 
     // Touch support
@@ -113,14 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     track.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
-        clearInterval(autoSlide);
+        stopAutoSlide();
     }, { passive: true });
 
     track.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].screenX;
         const diff = touchStartX - touchEndX;
         if (Math.abs(diff) > 50) {
-            diff > 0 ? slideTestimonial(1) : slideTestimonial(-1);
+            diff > 0 ? goToSlide(currentIndex + 1) : goToSlide(currentIndex - 1);
         }
         startAutoSlide();
     }, { passive: true });
@@ -143,6 +187,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.3 });
 
     sections.forEach(section => sectionObserver.observe(section));
+
+    // ========== PARALLAX SHAPES ==========
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        document.querySelectorAll('.shape').forEach((shape, i) => {
+            const speed = (i + 1) * 0.02;
+            shape.style.transform = `translateY(${scrollY * speed}px)`;
+        });
+    });
+
+    // ========== GOOGLE ANALYTICS (placeholder) ==========
+    // Uncomment and add your GA4 measurement ID
+    // const gaScript = document.createElement('script');
+    // gaScript.async = true;
+    // gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    // document.head.appendChild(gaScript);
+    // window.dataLayer = window.dataLayer || [];
+    // function gtag(){dataLayer.push(arguments);}
+    // gtag('js', new Date());
+    // gtag('config', 'G-XXXXXXXXXX');
 
     console.log('🦷 Lumie Dental Website loaded successfully!');
 });

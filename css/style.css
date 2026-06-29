@@ -342,15 +342,37 @@ img { max-width: 100%; display: block; }
     align-items: center;
 }
 
-.hero-image-wrapper {
+.hero-logo-showcase {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero-image-wrapper img {
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-xl);
+.hero-logo-bg {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: var(--gradient);
+    border-radius: 50%;
+    opacity: 0.12;
+    z-index: 0;
+}
+
+.hero-logo-img {
+    position: relative;
+    z-index: 1;
+    width: 240px;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(72, 119, 138, 0.2));
+    animation: logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
 .hero-float-card {

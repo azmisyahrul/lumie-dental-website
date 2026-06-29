@@ -77,10 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 16);
     }
 
-    // ========== FADE IN ON SCROLL ==========
-    const fadeElements = document.querySelectorAll('.service-card, .why-card, .location-card, .section-header');
-    
-    fadeElements.forEach(el => el.classList.add('fade-in'));
 
     const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {

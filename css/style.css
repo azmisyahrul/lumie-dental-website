@@ -631,6 +631,17 @@ ul {
     letter-spacing: 0.5px;
 }
 
+.service-price {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 14px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 600;
+}
+
 .services-cta {
     text-align: center;
     margin-top: 48px;
